@@ -1,0 +1,444 @@
+
+/* CONFIGURACIÓN GENERAL */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    color: #fff0fa;
+    background: #100d2c;
+}
+
+/* PORTADA FANTÁSTICA */
+
+.portada {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 65px 22px;
+    background:
+        radial-gradient(ellipse at 50% 25%,
+        #493578 0%, #211943 40%, #100d2c 80%);
+}
+
+/* ESTRELLAS DECORATIVAS */
+
+.estrellas {
+    position: absolute;
+    top: 35px;
+    left: 0;
+    width: 100%;
+    color: #ffe9ff;
+    font-size: 28px;
+    letter-spacing: 12px;
+    animation: brillar 3s infinite alternate;
+}
+
+/* LUNA */
+
+.luna {
+    font-size: 75px;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 0 22px #e8c6ff);
+    animation: flotar 4s ease-in-out infinite;
+}
+
+.etiqueta {
+    color: #e6c5ff;
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin: 15px 0;
+}
+
+h1 {
+    max-width: 850px;
+    font-size: clamp(32px, 6vw, 58px);
+    line-height: 1.2;
+    color: #ffe5f5;
+    text-shadow: 0 0 25px #d78cff66;
+    margin: 15px 0;
+}
+
+.introduccion {
+    max-width: 600px;
+    line-height: 1.9;
+    font-size: 18px;
+    color: #e4d9f7;
+}
+
+/* BOTONES */
+
+button {
+    border: 1px solid #f7c6ef;
+    border-radius: 30px;
+    padding: 14px 27px;
+    margin-top: 22px;
+    background: linear-gradient(135deg, #b75fd0, #e779ad);
+    color: white;
+    font-size: 16px;
+    font-family: inherit;
+    cursor: pointer;
+    box-shadow: 0 0 20px #c76dd944;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+    transform: scale(1.06);
+    box-shadow: 0 0 30px #e79bea88;
+}
+
+/* CARTA */
+
+.carta {
+    display: none;
+    width: 100%;
+    max-width: 650px;
+    margin-top: 35px;
+    padding: 35px;
+    border: 1px solid #d9b2ed;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #fff0f6, #f0dcff);
+    color: #493052;
+    text-align: left;
+    box-shadow: 0 0 45px #d99bff33;
+    animation: aparecer 0.7s ease;
+}
+
+.carta.abierta {
+    display: block;
+}
+
+.carta h2 {
+    text-align: center;
+    color: #883f88;
+    line-height: 1.4;
+}
+
+.carta p {
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.sello {
+    text-align: center;
+    font-size: 36px;
+}
+
+.firma {
+    margin-top: 28px;
+    text-align: right;
+    font-style: italic;
+    color: #883f88;
+}
+
+.boton-cerrar {
+    display: block;
+    margin: 25px auto 0;
+}
+
+/* FRASE Y ENLACE */
+
+.frase-final {
+    margin-top: 45px;
+    color: #e5c9ff;
+    font-style: italic;
+    line-height: 1.8;
+}
+
+.enlace-recuerdos {
+    margin-top: 22px;
+    color: #ffd5f0;
+    text-decoration: none;
+}
+
+.enlace-recuerdos:hover {
+    text-decoration: underline;
+}
+
+/* SECCIÓN DE RECUERDOS */
+
+.recuerdos {
+    padding: 80px 25px;
+    text-align: center;
+    background: #191333;
+}
+
+.recuerdos h2 {
+    color: #f7d7ff;
+    font-size: clamp(27px, 5vw, 42px);
+}
+
+.recuerdos p:not(.etiqueta) {
+    max-width: 580px;
+    margin: 20px auto;
+    line-height: 1.9;
+    color: #ddd2f4;
+}
+
+.simbolos {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    margin-top: 35px;
+    font-size: 38px;
+}
+
+footer {
+    padding: 25px;
+    text-align: center;
+    background: #0b0920;
+    color: #cbb6e9;
+}
+
+/* ANIMACIONES */
+
+@keyframes brillar {
+    from {
+        opacity: 0.45;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes flotar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* DISEÑO PARA CELULARES */
+
+@media (max-width: 600px) {
+    .portada {
+        padding: 60px 20px;
+    }
+
+    .introduccion {
+        font-size: 16px;
+    }
+
+    .carta {
+        padding: 23px;
+    }
+
+    .carta p {
+        font-size: 15px;
+    }
+
+    .etiqueta {
+        letter-spacing: 2px;
+        line-height: 1.8;
+    }
+}
+
+/* PERSONALIZACIÓN DE TU CARTA */
+
+.carta h2 {
+    font-size: clamp(25px, 5vw, 34px);
+    text-align: center;
+    color: #883f88;
+    margin-bottom: 18px;
+}
+
+.carta h3 {
+    text-align: center;
+    font-size: 22px;
+    color: #883f88;
+    margin-top: 25px;
+}
+
+.carta .dedicatoria {
+    text-align: center;
+    font-size: 20px;
+    font-style: italic;
+    color: #a34b91;
+}
+
+.carta p {
+    text-align: justify;
+    line-height: 2;
+    margin: 20px 0;
+}
+
+.carta .separador {
+    text-align: center;
+    margin: 28px 0;
+    color: #a34b91;
+    font-size: 23px;
+    letter-spacing: 8px;
+}
+
+.carta .firma {
+    text-align: right;
+    font-style: italic;
+    color: #883f88;
+    margin-top: 35px;
+}
+/* CIELO ESTRELLADO */
+
+#cielo-estrellado {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* CADA ESTRELLA */
+
+.estrella-magica {
+    position: absolute;
+    color: #ffffff;
+    opacity: 0.3;
+    animation: brillar 3s ease-in-out infinite alternate;
+}
+
+/* BRILLO DE LAS ESTRELLAS */
+
+@keyframes brillar {
+    from {
+        opacity: 0.2;
+        transform: scale(0.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.3);
+        text-shadow: 0 0 10px #d9b7ff,
+                     0 0 20px #a66cff;
+    }
+}
+
+/* MANTENER EL CONTENIDO POR ENCIMA DEL CIELO */
+
+.portada {
+    position: relative;
+    z-index: 1;
+}
+/* CORAZONES FLOTANTES */
+
+.corazon-flotante {
+    position: fixed;
+    z-index: 9999;
+    pointer-events: none;
+    user-select: none;
+
+    font-size: 24px;
+
+    animation: flotarCorazon 2s ease-out forwards;
+}
+
+/* MOVIMIENTO DEL CORAZÓN */
+
+@keyframes flotarCorazon {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(0.5) rotate(0deg);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(-70px) scale(1.2) rotate(15deg);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-150px) scale(0.8) rotate(-15deg);
+    }
+}
+/* NUESTRA HISTORIA */
+
+.nuestra-historia {
+    width: 90%;
+    max-width: 750px;
+    margin: 50px auto;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    text-align: center;
+
+    background: rgba(36, 19, 64, 0.75);
+    border: 1px solid rgba(226, 190, 255, 0.5);
+    border-radius: 20px;
+
+    box-shadow: 0 0 25px rgba(174, 103, 255, 0.2);
+}
+
+.nuestra-historia h2 {
+    color: #f4c8ff;
+    font-size: clamp(24px, 5vw, 34px);
+}
+
+.fecha-especial {
+    color: #ffd6ec;
+    font-size: 18px;
+}
+
+.contador-amor {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 30px 0;
+}
+
+.unidad-tiempo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+
+    width: 105px;
+    min-height: 85px;
+    padding: 10px 5px;
+    box-sizing: border-box;
+
+    background: rgba(255, 255, 255, 0.09);
+    border: 1px solid #bd8be8;
+    border-radius: 12px;
+}
+
+.unidad-tiempo span {
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.unidad-tiempo small {
+    color: #e8d5ff;
+}
+
+.mensaje-historia {
+    color: #ffe0f2;
+    line-height: 1.8;
+    font-style: italic;
+}
